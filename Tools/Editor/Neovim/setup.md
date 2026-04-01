@@ -20,3 +20,8 @@
 ```powershell
 git --version
 gh --version
+
+
+## 3. Github 認証(一回だけ)
+gh auth login
+``
