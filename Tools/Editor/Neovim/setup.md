@@ -23,5 +23,6 @@ gh --version
 ```
 
 ## 3. Github 認証(一回だけ)
+```powershell
 gh auth login
-``
+```
