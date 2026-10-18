@@ -51,6 +51,10 @@ brew install --cask font-jetbrains-mono-nerd-font
 
 ~~~bash
 curl -fsSL https://claude.ai/install.sh | bash
+
+# ~/.local/bin に PATH を通す（初回のみ。「command not found: claude」対策）
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc && source ~/.zshrc
+
 claude   # 初回はブラウザでログイン。終わったら /exit で終了
 ~~~
 
