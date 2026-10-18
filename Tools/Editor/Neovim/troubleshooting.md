@@ -14,3 +14,15 @@
 ## アイコンが文字化けする
 - Nerd Font を使っていない
 - ターミナル設定を確認
+
+## (macOS) live_grep で何も出ない
+- ripgrep が未インストール
+- `brew install ripgrep`
+
+## (macOS) 色がおかしい / 配色が崩れる
+- 標準のターミナル.app は True Color 非対応
+- WezTerm / Ghostty / iTerm2 などを使う
+
+## (macOS) Esc 後にコマンドが効かない
+- IME が日本語のまま
+- macism で InsertLeave 時に英数へ切り替える（setup-macos.md 参照）

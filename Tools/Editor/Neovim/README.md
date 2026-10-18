@@ -1,7 +1,7 @@
-# Neovim as Work IDE (Windows / Vim-style)
+# Neovim as Work IDE (Windows / macOS / Vim-style)
 
 このディレクトリは、Neovim を **仕事用 IDE として運用するための設定・学習ノート**です。  
-Windows 環境において、VS Code の代替として Neovim を常用することを目的としています。
+Windows / macOS 環境において、VS Code の代替として Neovim を常用することを目的としています。
 
 ---
 
@@ -47,7 +47,8 @@ Windows 環境において、VS Code の代替として Neovim を常用する�
 
 | ファイル | 内容 |
 |---|---|
-| setup.md | 環境構築手順 |
+| setup.md | 環境構築手順（Windows） |
+| setup-macos.md | 環境構築手順（macOS） |
 | structure.md | 設定ファイル構成の説明 |
 | plugins.md | プラグイン一覧と役割 |
 | keymaps.md | よく使うキーマップ |
