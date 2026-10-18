@@ -8,6 +8,7 @@ opt.relativenumber = true  -- 相対行番号（5j のような移動回数が�
 opt.cursorline = true      -- カーソル行をハイライト
 opt.signcolumn = "yes"     -- 左端の記号欄を常に表示（Git差分やエラー表示でガタつかない）
 opt.termguicolors = true   -- フルカラー表示
+opt.background = "dark"    -- ターミナルが白背景でも常にダーク配色にする
 opt.scrolloff = 8          -- 上下に最低8行の余白を残してスクロール
 opt.wrap = false           -- 長い行を折り返さない（ログや config を見やすく）
 opt.list = true            -- タブや行末スペースを可視化（YAML のミス防止）
