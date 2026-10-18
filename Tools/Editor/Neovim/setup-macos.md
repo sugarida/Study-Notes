@@ -57,8 +57,12 @@ gh --version
 GitHub 認証（初回のみ）を行います。
 
 ~~~bash
-gh auth login
+gh auth login        # GitHub.com → HTTPS → Login with a web browser を選ぶ
+gh auth setup-git    # git コマンドでも gh の認証を使うようにする
 ~~~
+
+※ GitHub はパスワードでの git clone に対応していない。  
+　 プライベートリポジトリを clone するには、先にこの認証が必要。
 
 ---
 
@@ -74,12 +78,12 @@ macOS での設定パスは以下です。
 （リポジトリ側を編集すれば、そのまま設定に反映される）
 
 ~~~bash
-# 既存設定のバックアップ
-mv ~/.config/nvim{,.bak} 2>/dev/null
-mv ~/.local/share/nvim{,.bak} 2>/dev/null
+# 既存設定のバックアップ（すでに ~/.config/nvim がある場合）
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
 
 # リポジトリを clone してリンク
-git clone https://github.com/sugarida/Study-Notes.git ~/Study-Notes
+gh repo clone sugarida/Study-Notes ~/Study-Notes
 mkdir -p ~/.config
 ln -s ~/Study-Notes/Tools/Editor/Neovim/nvim ~/.config/nvim
 ~~~
