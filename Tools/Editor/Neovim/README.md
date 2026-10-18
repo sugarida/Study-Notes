@@ -1,45 +1,28 @@
-# Neovim as Work IDE (Windows / macOS / Vim-style)
+# Neovim 自作環境（macOS）
 
-このディレクトリは、Neovim を **仕事用 IDE として運用するための設定・学習ノート**です。  
-Windows / macOS 環境において、VS Code の代替として Neovim を常用することを目的としています。
-
----
-
-## 🎯 目的
-
-- Vim 流儀のキーバインドで作業効率を最大化
-- Git / GitHub 操作をエディタ内で完結
-- 軽量かつ再現可能な開発環境を構築
-- 設定内容を「知識」として再利用できる形で保存
+Neovim を **ゼロから少しずつ育てる** ための設定と学習ノート。  
+「1 ステップ = 実際に使ってみる → 不満を洗い出す → 次を足す」で進める。
 
 ---
 
-## ✅ この環境でできること
+## 🎯 方針
 
-### 📁 ファイル管理
-- ツリー表示によるプロジェクト構造の把握
-- Git ステータスと連動した表示
+- 自分で理解できる設定だけを入れる（全部入りの配布設定は使わない）
+- 見た目は良く、でも起動は速く（必要になるまでプラグインを読み込まない）
+- 主な用途: インフラ・設定ファイル（YAML / JSON / Terraform / シェル）、Markdown、ネットワーク機器の config
 
-### 🌱 Git 操作
-- 行単位の差分表示
-- ステージ / アンステージ
-- コミット / プッシュ / プル
-- diff / blame 操作
+---
 
-### 🐙 GitHub 連携
-- Pull Request 一覧表示
-- Issue 一覧表示
-- GitHub CLI (`gh`) と連携
+## 🗺 ロードマップ
 
-### 🧠 IDE 機能
-- LSP による定義ジャンプ・参照検索
-- ホバー表示
-- リネーム
-- オートコンプリート
-
-### 🔍 検索
-- ファイル名検索
-- プロジェクト全体の全文検索
+| Step | 内容 | 状態 |
+|---|---|---|
+| 0 | 最小構成（基本オプション・キーマップ・テーマ・which-key） | ✅ |
+| 1 | 見た目（ステータスライン・アイコン・Treesitter による色分け） | ⬜ |
+| 2 | 移動（ファイラー・あいまい検索・全文検索） | ⬜ |
+| 3 | IDE 機能（LSP・補完・フォーマット・エラー表示） | ⬜ |
+| 4 | Git / GitHub（差分表示・コミット・PR レビュー） | ⬜ |
+| 5 | 用途別（Markdown プレビュー・Cisco config の色分け・巨大ログ対策） | ⬜ |
 
 ---
 
@@ -47,9 +30,21 @@ Windows / macOS 環境において、VS Code の代替として Neovim を常用
 
 | ファイル | 内容 |
 |---|---|
-| setup.md | 環境構築手順（Windows） |
 | setup-macos.md | 環境構築手順（macOS） |
-| structure.md | 設定ファイル構成の説明 |
-| plugins.md | プラグイン一覧と役割 |
-| keymaps.md | よく使うキーマップ |
-| troubleshooting.md | ハマりどころ・対処メモ |
+| keymaps.md | キーマップ早見表（自作分 + Vim 基本操作） |
+| nvim/ | 設定本体（`~/.config/nvim` にリンクする） |
+| archive/windows-trial/ | 以前 Windows で試した LazyVim ベースの設定（参考用） |
+
+~~~text
+nvim/
+├─ init.lua              -- 入口。leader キー設定と各ファイルの読み込み
+└─ lua/
+   ├─ config/
+   │  ├─ options.lua     -- 行番号・インデントなど基本動作
+   │  ├─ keymaps.lua     -- 自作キーマップ
+   │  ├─ autocmds.lua    -- 自動処理（ヤンク時ハイライト・IME 切替）
+   │  └─ lazy.lua        -- プラグインマネージャ
+   └─ plugins/           -- 1 プラグイン = 1 ファイル
+      ├─ colorscheme.lua
+      └─ which-key.lua
+~~~

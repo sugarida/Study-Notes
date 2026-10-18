@@ -1,8 +1,7 @@
 # Neovim セットアップ手順（macOS）
 
 このドキュメントは、本リポジトリの Neovim 設定を  
-macOS 環境で再現するための手順をまとめたものです。  
-（Windows 版は [setup.md](./setup.md) を参照）
+macOS 環境で再現するための手順をまとめたものです。
 
 ---
 
@@ -29,18 +28,17 @@ macOS 環境で再現するための手順をまとめたものです。
 ## 必須ツール
 
 ~~~bash
-brew install neovim git gh ripgrep fd lazygit node
+brew install neovim git gh ripgrep fd node
 brew install --cask font-jetbrains-mono-nerd-font
 ~~~
 
 | ツール | 用途 |
 |---|---|
-| neovim | 本体（v0.9 以上、LazyVim は v0.10 以上推奨） |
+| neovim | 本体（v0.11 以上） |
 | git / gh | Git 操作・GitHub 連携（octo.nvim） |
-| ripgrep | Telescope の全文検索（live_grep）に必須 |
+| ripgrep | 全文検索に必須（Step 2 で使用） |
 | fd | 高速なファイル検索 |
-| lazygit | LazyVim の `<leader>gg` で使う Git UI |
-| node | 一部 LSP（TypeScript / JSON など）の実行に必要 |
+| node | 一部 LSP（YAML / JSON など）の実行に必要（Step 3 で使用） |
 | Nerd Font | アイコン表示用 |
 
 インストール後、ターミナルのフォント設定で  
@@ -106,20 +104,6 @@ nvim
 
 ---
 
-## LSP セットアップ
-
-~~~vim
-:Mason
-~~~
-
-必要に応じてインストール。
-
-- lua_ls
-- ts_ls（旧 tsserver）
-- pyright
-
----
-
 ## macOS ならではの設定
 
 ### Caps Lock を Control にする
@@ -159,15 +143,8 @@ brew tap laishulu/homebrew
 brew install macism
 ~~~
 
-`lua/config/autocmds.lua` に追記:
-
-~~~lua
-vim.api.nvim_create_autocmd("InsertLeave", {
-  callback = function()
-    vim.fn.system({ "macism", "com.apple.keylayout.ABC" })
-  end,
-})
-~~~
+インストールするだけで OK。`lua/config/autocmds.lua` が macism を見つけると、
+Insert モードを抜けた時に自動で英数に切り替える。
 
 ※ 簡易的には「Esc の後に英数キー」を押す癖をつけるだけでも OK。
 
