@@ -19,9 +19,9 @@ Neovim を **ゼロから少しずつ育てる** ための設定と学習ノー�
 |---|---|---|
 | 0 | 最小構成（基本オプション・キーマップ・テーマ・which-key） | ✅ |
 | 1 | 見た目（ステータスライン・アイコン・Treesitter による色分け） | ⬜ |
-| 2 | 移動（ファイラー・あいまい検索・全文検索） | ⬜ |
+| 2 | 移動（ファイルツリー・あいまい検索・全文検索・ターミナル） | ✅ |
 | 3 | IDE 機能（LSP・補完・フォーマット・エラー表示） | ⬜ |
-| 4 | Git / GitHub（差分表示・コミット・PR レビュー） | ⬜ |
+| 4 | Git / GitHub（差分表示・Lazygit・Issue / PR 一覧） | 🟡 基本のみ |
 | 5 | 用途別（Markdown プレビュー・Cisco config の色分け・巨大ログ対策） | ⬜ |
 
 ---
@@ -45,6 +45,9 @@ nvim/
    │  ├─ autocmds.lua    -- 自動処理（ヤンク時ハイライト・IME 切替）
    │  └─ lazy.lua        -- プラグインマネージャ
    └─ plugins/           -- 1 プラグイン = 1 ファイル
-      ├─ colorscheme.lua
-      └─ which-key.lua
+      ├─ colorscheme.lua  -- 配色
+      ├─ which-key.lua    -- キーのガイド表示
+      ├─ neo-tree.lua     -- ファイルツリー
+      ├─ snacks.lua       -- ターミナル・検索・Lazygit・GitHub 連携
+      └─ gitsigns.lua     -- 行ごとの Git 差分
 ~~~

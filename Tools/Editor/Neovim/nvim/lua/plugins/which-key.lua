@@ -3,7 +3,14 @@
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
-  opts = { preset = "modern" },
+  opts = {
+    preset = "modern",
+    -- Space の後のメニューに表示するグループ名
+    spec = {
+      { "<leader>f", group = "検索" },
+      { "<leader>g", group = "Git / GitHub" },
+    },
+  },
   keys = {
     { "<leader>?", function() require("which-key").show() end, desc = "キーマップ一覧" },
   },

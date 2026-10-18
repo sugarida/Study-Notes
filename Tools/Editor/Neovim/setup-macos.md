@@ -28,15 +28,16 @@ macOS 環境で再現するための手順をまとめたものです。
 ## 必須ツール
 
 ~~~bash
-brew install neovim git gh ripgrep fd node
+brew install neovim git gh lazygit ripgrep fd node
 brew install --cask font-jetbrains-mono-nerd-font
 ~~~
 
 | ツール | 用途 |
 |---|---|
 | neovim | 本体（v0.11 以上） |
-| git / gh | Git 操作・GitHub 連携（octo.nvim） |
-| ripgrep | 全文検索に必須（Step 2 で使用） |
+| git / gh | Git 操作・GitHub の Issue / PR 表示 |
+| lazygit | Git 操作画面（`Space g g`） |
+| ripgrep | 全文検索（`Space f g`）に必須 |
 | fd | 高速なファイル検索 |
 | node | 一部 LSP（YAML / JSON など）の実行に必要（Step 3 で使用） |
 | Nerd Font | アイコン表示用 |
