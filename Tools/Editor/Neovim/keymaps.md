@@ -52,6 +52,20 @@
 
 Lazygit 内: `Space` ステージ / `c` コミット / `P` プッシュ / `p` プル / `?` ヘルプ / `q` 閉じる
 
+### Claude Code
+| キー | 動作 |
+|---|---|
+| `Space a c` | Claude Code を右側に開く / 閉じる |
+| `Space a f` | Claude Code の画面へ移動 |
+| `Ctrl h` | Claude Code の画面から左の編集画面へ戻る |
+| `Space a b` | 今のファイルを Claude に渡す |
+| `v` で選択 → `Space a s` | 選択範囲を Claude に渡す |
+| ツリーで `Space a s` | ツリー上のファイルを Claude に渡す |
+| `Space a a` / `Space a d` | Claude の変更提案を承認 / 却下 |
+| `Space a r` / `Space a C` | 過去の会話を再開 / 直前の会話を続ける |
+
+Claude Code の画面内では `Esc` は Claude への「中断」になる。編集画面に戻るときは `Ctrl h` を使う。
+
 ---
 
 ## Vim の基本（まずはこれだけ）

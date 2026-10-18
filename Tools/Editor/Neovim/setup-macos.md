@@ -47,6 +47,17 @@ brew install --cask font-jetbrains-mono-nerd-font
 
 ---
 
+## Claude Code のインストール
+
+~~~bash
+curl -fsSL https://claude.ai/install.sh | bash
+claude   # 初回はブラウザでログイン。終わったら /exit で終了
+~~~
+
+Neovim 内では `Space a c` で右側に開く（claudecode.nvim）。
+
+---
+
 ## Git / GitHub CLI 確認
 
 ~~~bash

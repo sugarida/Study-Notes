@@ -23,6 +23,7 @@ Neovim を **ゼロから少しずつ育てる** ための設定と学習ノー�
 | 3 | IDE 機能（LSP・補完・フォーマット・エラー表示） | ⬜ |
 | 4 | Git / GitHub（差分表示・Lazygit・Issue / PR 一覧） | 🟡 基本のみ |
 | 5 | 用途別（Markdown プレビュー・Cisco config の色分け・巨大ログ対策） | ⬜ |
+| + | Claude Code 連携 | ✅ |
 
 ---
 
@@ -49,5 +50,6 @@ nvim/
       ├─ which-key.lua    -- キーのガイド表示
       ├─ neo-tree.lua     -- ファイルツリー
       ├─ snacks.lua       -- ターミナル・検索・Lazygit・GitHub 連携
-      └─ gitsigns.lua     -- 行ごとの Git 差分
+      ├─ gitsigns.lua     -- 行ごとの Git 差分
+      └─ claudecode.lua   -- Claude Code 連携
 ~~~

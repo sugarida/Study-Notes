@@ -9,6 +9,7 @@ return {
     spec = {
       { "<leader>f", group = "検索" },
       { "<leader>g", group = "Git / GitHub" },
+      { "<leader>a", group = "Claude Code" },
     },
   },
   keys = {
